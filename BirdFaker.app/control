@@ -1,0 +1,17 @@
+Package:IFaker
+Name:IFaker_IOS6.0-10.2.1
+Version: 3.6.0
+Description:IFaker 兼容IOS6.0-10.2.1越狱系统一键新机神器、全息备份、自定义设备信息、修改地理位置。
+Section: Tweaks
+Depends:firmware (>= 6.0), mobilesubstrate
+Conflicts:
+Replaces:
+Priority:optional
+Architecture: iphoneos-arm
+Author:
+dev:
+Homepage:
+Depiction:
+Maintainer:
+Icon:
+

@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--App List View Controller-->
+        <scene sceneID="i0J-Nc-4wd">
+            <objects>
+                <viewController storyboardIdentifier="applistVc" id="Bk8-IB-LME" customClass="AppListViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uLU-vr-8bc"/>
+                        <viewControllerLayoutGuide type="bottom" id="STP-Bf-avZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wW7-iw-aIk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W7G-20-SuO">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="程序列表" id="QnW-WG-fcn">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" image="navi_back_btn_bg" id="Rjr-W7-1dg">
+                                            <connections>
+                                                <action selector="back_btn_click:" destination="Bk8-IB-LME" id="zDx-hf-B27"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" style="plain" id="j4L-An-IgE">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0cL-3p-IQE">
+                                                <rect key="frame" x="221" y="7" width="83" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="全选"/>
+                                                <connections>
+                                                    <action selector="selectAll_btn_click:" destination="Bk8-IB-LME" eventType="touchUpInside" id="nrG-JP-Cft"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8QJ-3b-7Q0">
+                                <rect key="frame" x="0.0" y="120" width="375" height="539"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lAd-sX-kid">
+                                <rect key="frame" x="0.0" y="64" width="320" height="56"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <connections>
+                        <outlet property="AppNaviBar" destination="W7G-20-SuO" id="aDz-DN-OeG"/>
+                        <outlet property="applist_tableview" destination="8QJ-3b-7Q0" id="HnE-gQ-3FB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8em-gz-7Ng" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-612" y="-132.68365817091455"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uLC-Ky-HCn"/>
+                        <viewControllerLayoutGuide type="bottom" id="TmY-GL-3qe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7UN-ow-RFS">
+                                <rect key="frame" x="28" y="222" width="244" height="30"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="勾选的程序(0)个"/>
+                                <connections>
+                                    <action selector="applist_btn_click:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Ya-Kh-2ck"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="EmF-4r-3sE">
+                                <rect key="frame" x="16" y="74" width="267" height="29"/>
+                                <segments>
+                                    <segment title="iPhone"/>
+                                    <segment title="iPad"/>
+                                    <segment title="iTouch"/>
+                                </segments>
+                                <connections>
+                                    <action selector="IndexDidChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="Ktm-yO-gMX"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ywe-Dc-GmD">
+                                <rect key="frame" x="206" y="316" width="66" height="30"/>
+                                <state key="normal" title=" 一键新机"/>
+                                <connections>
+                                    <action selector="one_key_new_device_btn_click:" destination="BYZ-38-t0r" eventType="touchUpInside" id="afA-gH-O6k"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Itp-XX-xsf">
+                                <rect key="frame" x="210" y="382" width="62" height="30"/>
+                                <state key="normal" title="备份记录"/>
+                                <connections>
+                                    <action selector="one_key_new_device_btn_click:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sR7-d4-V4Q"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="coH-5z-pba">
+                                <rect key="frame" x="210" y="450" width="62" height="30"/>
+                                <state key="normal" title="伪装位置"/>
+                                <connections>
+                                    <action selector="one_key_new_device_btn_click:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Z3f-k9-0oZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zdp-wj-RxX">
+                                <rect key="frame" x="118" y="450" width="62" height="30"/>
+                                <state key="normal" title="免责申明"/>
+                                <connections>
+                                    <action selector="one_key_new_device_btn_click:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9u3-Ka-4LT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ouB-NT-lij">
+                                <rect key="frame" x="28" y="311" width="46" height="30"/>
+                                <state key="normal" title="仅备份"/>
+                                <connections>
+                                    <action selector="one_key_new_device_btn_click:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5yH-8c-Q55"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IGK-53-2Sn">
+                                <rect key="frame" x="28" y="382" width="46" height="30"/>
+                                <state key="normal" title="仅清理"/>
+                                <connections>
+                                    <action selector="one_key_new_device_btn_click:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W9F-eO-Qhp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvG-AF-kVa">
+                                <rect key="frame" x="28" y="450" width="46" height="30"/>
+                                <state key="normal" title="仅清理"/>
+                                <connections>
+                                    <action selector="one_key_new_device_btn_click:" destination="BYZ-38-t0r" eventType="touchUpInside" id="klA-yr-VdM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="7UN-ow-RFS" secondAttribute="trailing" constant="49" id="2QL-gh-hua"/>
+                            <constraint firstItem="TmY-GL-3qe" firstAttribute="top" secondItem="Itp-XX-xsf" secondAttribute="bottom" constant="156" id="2TD-oY-AB5"/>
+                            <constraint firstItem="Zdp-wj-RxX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="118" id="3wo-r6-y50"/>
+                            <constraint firstItem="coH-5z-pba" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="210" id="8Uh-Oi-rm5"/>
+                            <constraint firstItem="TmY-GL-3qe" firstAttribute="top" secondItem="Ywe-Dc-GmD" secondAttribute="bottom" constant="222" id="9Om-B1-iLT"/>
+                            <constraint firstItem="Itp-XX-xsf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="210" id="ESR-wb-Qhg"/>
+                            <constraint firstAttribute="trailing" secondItem="hvG-AF-kVa" secondAttribute="trailing" constant="246" id="GCE-sI-Roi"/>
+                            <constraint firstItem="hvG-AF-kVa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="28" id="IH5-84-6Ko"/>
+                            <constraint firstAttribute="trailing" secondItem="Ywe-Dc-GmD" secondAttribute="trailing" constant="48" id="Igj-ex-44G"/>
+                            <constraint firstItem="TmY-GL-3qe" firstAttribute="top" secondItem="hvG-AF-kVa" secondAttribute="bottom" constant="88" id="KKf-WS-Zeq"/>
+                            <constraint firstAttribute="trailing" secondItem="coH-5z-pba" secondAttribute="trailing" constant="48" id="Nux-yV-vJP"/>
+                            <constraint firstItem="EmF-4r-3sE" firstAttribute="top" secondItem="uLC-Ky-HCn" secondAttribute="bottom" constant="54" id="Rgt-10-Qgl"/>
+                            <constraint firstAttribute="trailing" secondItem="Itp-XX-xsf" secondAttribute="trailing" constant="48" id="V6j-ZJ-77Y"/>
+                            <constraint firstItem="Ywe-Dc-GmD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="206" id="XLU-6v-sTT"/>
+                            <constraint firstItem="TmY-GL-3qe" firstAttribute="top" secondItem="coH-5z-pba" secondAttribute="bottom" constant="88" id="YQE-Pj-Kjf"/>
+                            <constraint firstItem="TmY-GL-3qe" firstAttribute="top" secondItem="ouB-NT-lij" secondAttribute="bottom" constant="227" id="eEb-Ir-DYq"/>
+                            <constraint firstItem="TmY-GL-3qe" firstAttribute="top" secondItem="Zdp-wj-RxX" secondAttribute="bottom" constant="88" id="fa4-fC-1WS"/>
+                            <constraint firstItem="IGK-53-2Sn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="28" id="hNL-vQ-XNi"/>
+                            <constraint firstAttribute="trailing" secondItem="Zdp-wj-RxX" secondAttribute="trailing" constant="140" id="je1-eQ-QBe"/>
+                            <constraint firstItem="EmF-4r-3sE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="khr-Qq-K91"/>
+                            <constraint firstItem="TmY-GL-3qe" firstAttribute="top" secondItem="IGK-53-2Sn" secondAttribute="bottom" constant="156" id="oQE-lv-Wwc"/>
+                            <constraint firstAttribute="trailing" secondItem="ouB-NT-lij" secondAttribute="trailing" constant="246" id="pBh-tO-tzm"/>
+                            <constraint firstAttribute="trailing" secondItem="IGK-53-2Sn" secondAttribute="trailing" constant="246" id="qIm-J4-XXc"/>
+                            <constraint firstItem="7UN-ow-RFS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="35" id="sLu-du-c7d"/>
+                            <constraint firstItem="ouB-NT-lij" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="28" id="y4j-p8-cR6"/>
+                            <constraint firstItem="7UN-ow-RFS" firstAttribute="top" secondItem="EmF-4r-3sE" secondAttribute="bottom" constant="78" id="zAm-IM-X9H"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="EmF-4r-3sE" secondAttribute="trailing" constant="21" id="zZK-Wd-7jg"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1293.75" y="-132.04225352112675"/>
+        </scene>
+        <!--Arg Set View Controller-->
+        <scene sceneID="1y2-TU-RTN">
+            <objects>
+                <viewController storyboardIdentifier="ArgSetVc" id="51r-Yp-rQb" customClass="ArgSetViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="thT-Qg-GsL"/>
+                        <viewControllerLayoutGuide type="bottom" id="Gze-UO-Nnq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cWF-MG-34a">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jJ5-yZ-WEf">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="新机参数" id="KV4-Bq-qNX">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" image="navi_back_btn_bg" id="RoK-hc-pBm"/>
+                                        <barButtonItem key="rightBarButtonItem" width="8" style="plain" id="vho-Ul-Jk7">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="R9v-U0-0jp">
+                                                <rect key="frame" x="221" y="7" width="83" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="全选"/>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="UDID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1qg-MM-daZ">
+                                <rect key="frame" x="22" y="167" width="41" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SAU-QV-DpP">
+                                <rect key="frame" x="310" y="165" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="DGJSAJDGJHJHGJ" borderStyle="roundedRect" textAlignment="justified" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xvi-fs-FIq">
+                                <rect key="frame" x="79" y="162" width="202" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nXX-Ak-YI3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="40.799999999999997" y="-133.5832083958021"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="navi_back_btn_bg" width="28" height="28"/>
+    </resources>
+</document>

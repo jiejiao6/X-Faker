@@ -1,0 +1,39 @@
+#!/bin/bash
+declare -a cydia
+cydia=($CYDIA)
+
+killall -9 BirdFaker
+
+chown -R root:wheel /Applications/BirdFaker.app
+chmod -R 0755 /Applications/BirdFaker.app
+
+chmod a+s /Applications/BirdFaker.app/BirdFaker
+
+chown root:wheel /Library/MobileSubstrate/DynamicLibraries/*.dylib
+chown root:wheel /Library/MobileSubstrate/DynamicLibraries/*.plist
+
+chmod 0755 /Library/MobileSubstrate/DynamicLibraries/*.dylib
+chmod 0644 /Library/MobileSubstrate/DynamicLibraries/*.plist
+
+
+chmod a+x /var/root/bdfix
+
+mkdir -p /var/mobile/Library/Preferences/BirdFaker
+chmod -R 777 /var/mobile/Library/Preferences/BirdFaker
+
+su mobile -c uicache
+#解决中文输入法无法调出问题
+rm -rf "/var/root/Library/Preferences/com.apple.Preferences.plist"
+rm -rf "/var/root/Library/Preferences/.GlobalPreferences.plist"
+ln -s "/var/mobile/Library/Preferences/com.apple.Preferences.plist" "/var/root/Library/Preferences/com.apple.Preferences.plist"
+ln -s "/var/mobile/Library/Preferences/.GlobalPreferences.plist" "/var/root/Library/Preferences/.GlobalPreferences.plist"
+
+
+if [[ ${CYDIA+@} ]]; then
+eval "echo 'finish:reboot' >&${cydia[0]}"
+fi
+
+exit 0
+
+
+
